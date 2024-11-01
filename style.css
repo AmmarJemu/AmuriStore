@@ -1,0 +1,440 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Popins, sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header  {
+    
+    color: #fff;
+    font-size: 15px;
+    padding: 1rem 0
+    
+}
+header .nav{
+    margin-left: 65%;
+    font-size: 20px;
+}
+header h1{
+    margin-top: 15px;
+    margin-left: 25px;
+    font-family: 'Dancing Script', cursive;
+}
+#full{
+    background-image: url(./img/bcg8.jpg);
+    background-size: cover;
+    background-position: center;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+.hero {
+    position: relative;
+   
+    color: white;
+    height: 100vh;
+    padding: 15rem 1rem;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.hero h2 {
+    font-size: 4vw; 
+    margin-bottom: 0.5rem;
+    
+}
+
+.hero p {
+    font-size: 2.5vw; /* Responsive font size */
+    /* text-align: center; */
+}
+.cart-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.close-cart {
+    color: white;
+    background-color: #007bff; /* Same color as the Checkout button */
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+.close-cart:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}
+.cart-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.close-cart {
+    color: white;
+    background-color: #007bff; /* Same color as the Checkout button */
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+.close-cart:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+
+/* Background Text */
+.background-text {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    /* left: 1%;  */
+    transform: translate(-50%, -50%); Adjust for center positioning
+    font-size: 10vw; /* Responsive font size for background text */
+    opacity: 0.1; /* Make the text subtle */
+    /* text-align: center; */
+    pointer-events: none; /* Prevent interactions */
+}
+
+/* Adjust the background text size for smaller screens */
+@media (max-width: 768px) {
+    .background-text {
+        font-size: 15vw; /* Slightly larger text for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .background-text {
+        font-size: 20vw; /* Even larger text for mobile devices */
+    }
+}
+
+
+.shop-button {
+    /* width: 100px; */
+    /* height: 100px; */
+    border-radius: 15%;
+    margin-top: 15px;
+    background-color: #007bff; /* Initial blue color */
+    color: white;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.shop-button:hover {
+    background-color: #add8e6; /* Light blue hover effect */
+}
+
+.cart-icon {
+    cursor: pointer;
+    font-size: 17px;
+    margin-bottom: 1px;
+    position: relative;
+}
+
+#cart-count {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 0 5px;
+    position: absolute;
+    /* top: -10px;
+    right: -10px; */
+    font-size: 14px;
+}
+
+.cart-display {
+    position: fixed;
+    top: 20%; /* Adjust as needed */
+    right: 20px; /* Align to the right */
+    width: 250px; /* Set width of the cart box */
+    background-color: white; /* Background color */
+    border: 1px solid #ddd; /* Border styling */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Padding for content */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    z-index: 1000; /* Ensure it appears above other content */
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.cart-display h3 {
+    margin-bottom: 10px; /* Space below heading */
+}
+
+#checkout-button {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    width: 100%; /* Full width */
+}
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Space between items */
+}
+
+.cart-item-image {
+    width: 50px; /* Set a fixed width */
+    height: 50px; /* Set a fixed height */
+    object-fit: cover; /* Ensure images cover the box without distortion */
+    margin-right: 10px; /* Space between image and text */
+}
+
+.cart-item-info {
+    flex-grow: 1; /* Take remaining space */
+}
+#cart {
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #ddd; /* Optional: Add a border */
+    background-color: #f9f9f9; /* Optional: Background color */
+}
+
+#checkout-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.cart-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.close-cart {
+    color: white;
+    background-color: #007bff; /* Same color as the Checkout button */
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+.close-cart:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+
+.product-container {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    width: 200px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Adjust the values as needed */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    transition: transform 0.2s;    
+}
+.product-card:hover {
+    transform: scale(1.05); /* Optional: Slightly enlarge the card on hover */
+}
+
+.product-image {
+ 
+        width: 150px;  /* Set a fixed width */
+        height: auto /* Set a fixed height */
+        object-fit: cover; /* Ensures the image covers the space without distortion */
+        margin-bottom: 0.5rem;
+    
+    
+}
+
+button {
+    background-color: #3F72AF;
+    color: white;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#cart {
+    padding: 2rem;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+
+#products h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    position: relative;
+    color: #333;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    gap: 2rem;
+}
+
+.footer-column {
+    flex: 1 1 200px;
+}
+
+.footer-column h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #ddd;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-column ul li a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-column ul li a:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+
+
+.footer-bottom {
+    flex-basis: 100%;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.social-links a {
+    color: #bbb;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #007bff; /* Change to blue on hover */
+}
+
+
+
+
+/* Modal Overlay */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+    z-index: 2000; /* Ensure it appears above other content */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Close Button */
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.modal-content button {
+    background-color: #007bff; /* Blue background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px; /* Padding */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    margin-top: 10px; /* Space above the button */
+    transition: background-color 0.3s ease; /* Transition for hover effect */
+}
+
+.modal-content button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

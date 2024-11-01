@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amurii Store</title>
+    <link rel="icon" type="image/png" href="img/your-icon.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section id="full">
+<header>
+    <h1>Amurii Store </h1>
+    <nav class="nav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li>
+                <div class="cart-icon" onclick="toggleCart()">
+                    🛒 <span id="cart-count">0</span>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main id="home">
+    <section class="hero">
+        <h2>Welcome to Amurii Store</h2>
+        <p>Shopping in just one click</p>
+        <a href="#products">
+            <button class="shop-button">Shop Now</button>
+        </a>
+    </section>
+    </section>
+</main>
+
+<section id="products">
+    <h2>All Products</h2>
+    <div class="product-container">
+        <div class="product-card">
+            <img src="img/iphone 13.jpg" alt="Product 1" class="product-image">
+            <h3>iPhone 13</h3>
+            <p>95,000Birr</p>
+            <button onclick="addToCart('iPhone13', 95000, 'img/iphone 13.jpg')">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="img/iphone 16 blue.jpg" alt="Product 2" class="product-image">
+            <h3>iPhone 12 Pro</h3>
+            <p>45,000Birr</p>
+            <button onclick="addToCart('iPhone12', 45000, 'img/iphone 16 blue.jpg')">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="img/samsung.jpg" alt="Product 3" class="product-image">
+            <h3> S22 ultra</h3>
+            <p>50,000Birr</p>
+            <button onclick="addToCart('S22 ultra', 50000, 'img/samsung.jpg')">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="img/20n.jpeg" alt="Product 4" class="product-image">
+            <h3>Note 20 ultra</h3>
+            <p>25,000Birr</p>
+            <button onclick="addToCart('Note 20 ultra', 25000, 'img/20n.jpeg')">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="img/camon.jpeg" alt="Product 5" class="product-image">
+            <h3>Camon 30 pro</h3>
+            <p>27,500Birr</p>
+            <button onclick="addToCart('Camon30 pro', 27500, 'img/camon.jpeg')">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="img/x7.jpeg" alt="Product 1" class="product-image">
+            <h3>Oppo X-7</h3>
+            <p>35,000Birr</p>
+            <button onclick="addToCart('Oppo X-7', 35000, 'img/x7.jpeg')">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="img/spark.jpeg" alt="Product 2" class="product-image">
+            <h3>Tecno Spark</h3>
+            <p>20,000Birr</p>
+            <button onclick="addToCart('Tecno Spark', 20000, 'img/spark.jpeg')">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="img/s20.jpeg" alt="Product 3" class="product-image">
+            <h3>S20 ultra</h3>
+            <p>30,000Birr</p>
+            <button onclick="addToCart('S20 ultra', 30000, 'img/s20.jpeg')">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="img/tecno.jpeg" alt="Product 4" class="product-image">
+            <h3>Tecno Spark</h3>
+            <p>25,000Birr</p>
+            <button onclick="addToCart('Tecno Spark', 25000, 'img/tecno.jpeg')">Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="img/oppo.jpeg" alt="Product 5" class="product-image">
+            <h3>Oppo Pro</h3>
+            <p>36,000Birr</p>
+            <button onclick="addToCart('Oppo Pro', 36000, 'img/oppo.jpeg')">Add to Cart</button>
+        </div>
+    </div>
+
+    
+</section>
+
+<!-- Cart Display -->
+<div id="cart-display" class="cart-display" style="display: none;">
+    <h3>Your Cart</h3>
+    <div id="cart-items"></div>
+    <p><strong>Total:</strong> $<span id="cart-total">0</span></p>
+    <button onclick="checkout()">Checkout</button>
+    <span class="close-cart" onclick="toggleCart()">Close</span>
+</div>
+<!-- Payment Modal -->
+<div id="payment-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3>Select Payment Method</h3>
+        <form id="payment-form">
+            <label><input type="radio" name="payment" value="CBE"> CBE</label><br>
+            <label><input type="radio" name="payment" value="TeleBirr"> TeleBirr</label><br>
+            <label><input type="radio" name="payment" value="Dashen Bank"> Dashen Bank</label><br><br>
+            <button type="button" onclick="finishPurchase()">Finish</button>
+        </form>
+    </div>
+</div>
+
+<!-- Success Message -->
+<!-- Success Message -->
+<div id="success-message" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h3>Successfully Purchased!</h3>
+        <button onclick="closeSuccessMessage()">Close</button>
+    </div>
+</div>
+
+
+
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-column">
+            <h4>Customer Service</h4>
+            <ul>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">Shipping</a></li>
+                <li><a href="#">FAQs</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Account</h4>
+            <ul>
+                <li><a href="#">My Account</a></li>
+                <li><a href="#">Order History</a></li>
+                <li><a href="#">Wish List</a></li>
+                <li><a href="#">Newsletter</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+                <a href="https://www.tiktok.com/@amarjemal545" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.instagram.com/bereka._amm/" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Amurii Store. All rights reserved.</p>
+            
+
+        </div>
+    </div>
+</footer>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
